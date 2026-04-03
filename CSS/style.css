@@ -1,0 +1,52 @@
+.top-header {
+    background-color: #0b1f3a;
+    color: white;
+    padding: 20px 0;
+}
+
+.top-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.top-header a:hover {
+    color: #d62828;
+}
+
+.main-nav {
+    background-color: #d62828; /* röd */
+    padding: 15px 0;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+ 
+.events-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.events-section h2 {
+    font-size: 48px;
+    color: #0b1f3a;
+    font-weight: bold;
+}
