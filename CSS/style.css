@@ -1,3 +1,5 @@
+/*------------------------------------------------------- Header --------------------------------------------------------*/
+
 .top-header {
     background-color: #0b1f3a;
     color: white;
@@ -15,7 +17,7 @@
 }
 
 .main-nav {
-    background-color: #d62828; /* röd */
+    background-color: #d62828; 
     padding: 15px 0;
 }
 
@@ -29,6 +31,8 @@
     text-decoration: underline;
 }
 
+/*---------------------------------------------------- Hero section Home Page  ---------------------------------------------------------*/
+
 .hero {
     width: 100%;
 }
@@ -39,7 +43,9 @@
     object-fit: cover;
     display: block;
 }
- 
+
+/*-------------------------------------------------------- Event / Dinig Section Home Page  ------------------------------------------------------*/
+
 .events-section {
     text-align: center;
     margin-top: 50px;
@@ -49,4 +55,52 @@
     font-size: 48px;
     color: #0b1f3a;
     font-weight: bold;
+}
+
+.info-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    min-height: 180px;
+}
+
+.info-card h3 {
+    color: #0b1f3a;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-card p {
+    font-size: 18px;
+    color: #0b1f3a;
+}
+
+.events-background {
+    background-color: #0b1f3a; 
+}
+
+/* ---------------------------------------------------- Footer ----------------------------------------------*/
+
+.footer-red {
+    background-color: #d62828;
+    height: 25px;
+}
+
+.footer-blue {
+    background-color: #0b1f3a;
+    color: white;
+    padding: 35px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-title {
+    font-size: 24px; /* behåll stor */
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 16px; /* mindre */
 }
