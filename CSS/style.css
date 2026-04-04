@@ -44,6 +44,24 @@
     display: block;
 }
 
+.hero {
+    position: relative;
+}
+
+.hero-text-left {
+    position: absolute;
+    top: 30%;
+    left: 80px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.hero-text-left h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
 /*-------------------------------------------------------- Event / Dinig Section Home Page  ------------------------------------------------------*/
 
 .event-hero img {
