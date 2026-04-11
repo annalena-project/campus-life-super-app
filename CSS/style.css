@@ -328,3 +328,14 @@
     font-size: 18px;
     line-height: 1.8;
 }
+
+/*-----------------------------------------------Weather (API Placeholder Styling on Home page ) ---------------------------------*/
+
+.weather-section {
+    margin-top: 50px;
+}
+
+#weatherInfo {
+    font-size: 20px;
+    color: #0b1f3a;
+}
