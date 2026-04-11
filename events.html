@@ -2,23 +2,24 @@
 <html lang="en">
 
 <head>
+<!--- Basic page setup + Page title -->    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> Campus Life Super App </title>
 
+<!---Bootstrap + CSS for design and layout -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-
+<!--- HEADER SECTION -->
 <header class="top-header text-center">
-
     <h1>Campus Life Super App</h1>
-
 </header>
 
+<!--- Navigation Menu -->
 <nav class="main-nav">
     <ul class="list-unstyled d-flex justify-content-center gap-4 m-0">
         <li><a href="index.html">Home</a></li>
@@ -30,43 +31,42 @@
 
 <main>
 
-<!-- HERO IMAGE -->
+<!-- Hero Section - Main images + Image text  -->
 <div class="event-hero">
     <img src="images/event.png" alt="Campus Event">
 
     <h1 class="hero-text">Campus Event</h1>
 </div>
 
+<!--- Event Page Title -->
 <section class="events-section">
     <h2>Upcoming Events</h2>
-
     <p>text</p>
-
 </section>
 
-
-
+<!--- Basketball Event Section -->
 <div class="container mt-5">
     <div class="row align-items-center"></div>
 
     <div class="row align-items-center justify-content-center">
 
-        <!-- IMAGE -->
+        <!-- Basketball image -->
         <div class="col-md-5 text-center">
             <img src="images/basket.jpg" class="event-img" alt="Basketball">
         </div>
 
-        <!-- TEXT Bsketball Game  -->
+        <!-- Basketball information text + button -->
         <div class="col-md-5">
             <h2 class="section-title">Basketball Game</h2>
 
             <p>Date: April 20</p>
             <p>Location: Athletic Center</p>
 
+            <!--- Button to View deatil info-->
             <button id="basketBtn" class="btn btn-danger mt-3">
                 View Details
             </button>
-
+            <!--- Hidden deatil info -->
             <p id="basketDetails" style="display: none">
                 Information: Text 
             </p>
@@ -75,26 +75,26 @@
 
 </div>
 
+<!--- Study Night Event Section-->
 <div class="container mt-5">
-
     <div class="row align-items-center justify-content-center">
 
-        <!-- IMAGE -->
+        <!-- Study Night iMAGE -->
         <div class="col-md-5 text-center">
             <img src="images/library.jpg" class="event-img" alt="Library">
         </div>
 
-        <!-- TEXT Study Night -->
+        <!-- Study Night information text + button -->
         <div class="col-md-5">
             <h2 class="section-title">Study Night</h2>
 
             <p>Date: April 22</p>
-            <p>Library</p>
-
+            <p>Location: Library</p>
+            <!--- Button to View deatil info-->
             <button id="studyBtn" class="btn btn-danger mt-3">
                 View Details
             </button>
-
+            <!--- Hidden deatil info -->
             <p id="studyDetails" style="display: none">
                 Information: Text 
             </p>
@@ -104,27 +104,26 @@
 
 </div>
 
-
+<!--- Pizza Event Section -->
 <div class="container mt-5">
-
     <div class="row align-items-center justify-content-center">
 
-        <!-- IMAGE -->
+        <!-- Pizza event image -->
         <div class="col-md-5 text-center">
             <img src="images/pizza.jpg" class="event-img" alt="Make your own Pizza">
         </div>
 
-        <!-- TEXT Make your own Pizza-->
+        <!-- Pizza event information text + button-->
         <div class="col-md-5">
             <h2 class="section-title">Make your own Pizza</h2>
 
             <p>Date: May 1</p>
             <p>Location: Dining Hall</p>
-
+            <!--- Button to View deatil info-->
             <button id="pizzaBtn" class="btn btn-danger mt-3">
                 View Details
             </button>
-
+            <!--- Hidden deatil info -->
             <p id="pizzaDetails" style="display: none">
                 Information: Text 
             </p>
@@ -136,15 +135,16 @@
 
 </main>
 
+<!--- Spacer -->
 <div style="height: 200px;"></div>
 
+<!--- Footer -->
 <footer>
 
-    <!-- Red -->
-
+    <!-- Red Bar -->
     <div class="footer-red"></div>
 
-    <!-- Blue-->
+    <!-- Blue Bar + Contact info -->
     <div class="footer-blue">
         <p class="footer-title">Campus Life Super App</p>
 
@@ -155,6 +155,7 @@
 
 </footer>
 
+<!-- JavaScript file -->
 <script src="js/script.js"></script>
 
 </body>
