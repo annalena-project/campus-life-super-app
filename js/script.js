@@ -1,4 +1,5 @@
-/* ----- Basketball Game info Buton ------------------------*/
+/* ----- Basketball Game button functionallity  ------------------------*/
+ 
 const btn = document.getElementById("basketBtn");
 const details = document.getElementById("basketDetails");
 
@@ -13,7 +14,8 @@ btn.addEventListener("click", function() {
 
 });
 
-/* ----- Study Night info Buton ------------------------*/
+/* ----- Study Night button functionallity ------------------------*/
+
 const studyBtn = document.getElementById("studyBtn");
 const studyDetails = document.getElementById("studyDetails");
 
@@ -27,7 +29,8 @@ studyBtn.addEventListener("click", function() {
     }
 });
 
-/* ---- Make your own Piza info Buton --------------------*/
+/* ---- Make your own Piza button functionallity --------------------*/
+
 const pizzaBtn = document.getElementById("pizzaBtn");
 const pizzaDetails = document.getElementById("pizzaDetails");
 
