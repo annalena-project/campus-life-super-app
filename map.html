@@ -9,11 +9,16 @@
 
 <!--- Bootstrap + CSS for design and layout -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="CSS/style.css">
+
+<!--- Leaflet map CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 </head>
 
 <body>
+
 <!--- HEADER SECTION -->
 <header class="top-header text-center">
     <h1>Campus Life Super App</h1>
@@ -31,33 +36,49 @@
 
 <main>
 
-<!--- Hero section - Page title + information --->
+<!--- Page title -->
 <section class="events-section">
     <h2>MAP</h2>
-    <p>Find your way around campus</p>
+    <p>Find Your Way Around University</p>
 </section>
 
-<!--- Placeholder for future map -->
-<div class="map-placeholder">
-    Picture of Map
-</div>
+<!--- Map + Sidebar layout -->
+<div class="map-layout">
 
-<!--- Locations Section title -->
-<h2 class="locations-title">LOCATIONS</h2>
+    <!--- Left sidebar with clickable locations -->
+    <div class="map-sidebar">
 
-<!-- Placeholder for List of Campus Locations -->
-<div class="locations-list">
-    <!--- Location Names -->
-    <p>1.Text</p>
-    <p>2.Text</p>
-    <p>3.Text</p>
-    <p>4.Text</p>
-    <p>5.Text</p>
-    <p>6.Text</p>
-    <p>7.Text</p>
-    <p>8.Text</p>
-    <p>9.Text</p>
-    <p>10.Text</p>
+        <!--- Athletic Center -->
+        <div class="map-location-card" onclick="focusLocation('athletic')">
+            <p class="map-location-name">Athletic Center</p>
+        </div>
+
+        <!--- Main Dining Hall -->
+        <div class="map-location-card" onclick="focusLocation('dining')">
+            <p class="map-location-name">Main Dining Hall</p>
+        </div>
+
+        <!--- Library -->
+        <div class="map-location-card" onclick="focusLocation('library')">
+            <p class="map-location-name">Library</p>
+        </div
+
+        <!--- Cafeteria -->
+        <div class="map-location-card" onclick="focusLocation('cafeteria')">
+            <p class="map-location-name">Cafeteria</p>
+        </div>
+
+    </div>
+
+    <!--- Map container -->
+    <div class="map-container">
+        <!--- "Back to campus" button -->
+        <button class="campus-btn" onclick="resetMap()">
+            <i class="fa-solid fa-location-crosshairs"></i> University
+        </button>
+        <div id="map"></div>
+    </div>
+
 </div>
 
 </main>
@@ -66,23 +87,94 @@
 <div style="height: 200px;"></div>
 
 <footer>
-
     <!-- Red Bar -->
     <div class="footer-red"></div>
-
     <!-- Blue Bar + Contact info -->
     <div class="footer-blue">
         <p class="footer-title">Campus Life Super App</p>
-
         <p class="footer-text">Contact</p>
         <p class="footer-text">Phone: 123-456-789</p>
         <p class="footer-text">Email: campus@life.com</p>
     </div>
-
 </footer>
 
+<!--- Leaflet map JavaScript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <!--- JavaScript file -->
 <script src="js/script.js"></script>
+
+<!--- Map JavaScript -->
+<script>
+    // Campus center coordinates - North Park University
+    const campusLat = 41.9745;
+    const campusLng = -87.7125;
+
+    // Initialize map
+    const map = L.map('map').setView([campusLat, campusLng], 16);
+
+    // OpenStreetMap tiles - free, no API key needed
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Location data with coordinates + info
+    const locations = {
+        athletic: {
+            lat: 41.97337,
+            lng: -87.70888,
+            name: "Athletic Center",
+            hours: "6:00 AM - 10:00 PM",
+            desc: "Gym facilities and sports events."
+        },
+        dining: {
+            lat: 41.97269,
+            lng: -87.71163,
+            name: "Main Dining",
+            hours: "Mon-Fri 7:00 AM - 8:00 PM | Sat-Sun 8:00 AM - 6:00 PM",
+            desc: "Full service dining hall."
+        },
+        library: {
+            lat: 41.97432,
+            lng: -87.71208,
+            name: "Library",
+            hours: "8:00 AM - 10:00 PM",
+            desc: "Study zones and computers available."
+        },
+        cafeteria: {
+            lat: 41.97488,
+            lng: -87.71195,
+            name: "Cafeteria",
+            hours: "Mon-Fri 7:00 AM - 6:00 PM | Sat-Sun 10:00 AM - 4:00 PM",
+            desc: "Coffee and quick bites."
+        },       
+    };
+
+    // Add markers to map
+    const markers = {};
+    for (const key in locations) {
+        const loc = locations[key];
+        const marker = L.marker([loc.lat, loc.lng])
+            .addTo(map)
+            .bindPopup(`
+                <strong>${loc.name}</strong><br>
+                <i class="fa-solid fa-clock"></i> ${loc.hours}<br>
+                ${loc.desc}
+            `);
+        markers[key] = marker;
+    }
+
+    // Focus on location when sidebar card is clicked
+    function focusLocation(key) {
+        const loc = locations[key];
+        map.setView([loc.lat, loc.lng], 18);
+        markers[key].openPopup();
+    }
+
+    // Reset map to campus view
+    function resetMap() {
+        map.setView([campusLat, campusLng], 16);
+    }
+</script>
 
 </body>
 </html>
