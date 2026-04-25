@@ -440,3 +440,27 @@
     color: gray;
     font-size: 14px;
 }
+/*----------------------------------------------- Media Queries - Mobile -------------------------------*/
+@media (max-width: 768px) {
+
+    /* Map - stapla sidebar ovanpå kartan */
+    .map-layout {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .map-sidebar {
+        width: 100%;
+    }
+
+    .map-container {
+        height: 400px;
+        min-height: 400px;
+    }
+
+    #map {
+        height: 400px; 
+    }
+
+}
